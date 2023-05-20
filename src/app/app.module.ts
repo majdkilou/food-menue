@@ -2,6 +2,7 @@
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
 // Angular Material imports for toolbar and sidenav components
@@ -78,7 +79,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   MatListModule,
   MatMenuModule,
   MatTooltipModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

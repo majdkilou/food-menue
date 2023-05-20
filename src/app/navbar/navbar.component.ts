@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   public sidebarVisible: boolean;
+  public opened = false;
   constructor() {
     this.sidebarVisible = true; // Assign a value here
   }
