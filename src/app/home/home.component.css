@@ -1,3 +1,10 @@
 .home-containe {
 width: 100%;
 }
+
+.card {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}

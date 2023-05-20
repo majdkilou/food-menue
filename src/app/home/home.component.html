@@ -1,11 +1,15 @@
 <div class="home-container">
     <div class="card" *ngIf="images" >
-      <p-galleria [value]="images" [showIndicators]="true" [showThumbnails]="false" [changeItemOnIndicatorHover]="true" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '640px' }">
-        <ng-template pTemplate="item" let-item >
-
-          <img [src]="item.itemImageSrc" [alt]="item.alt" style="width: 100%; display: block;" />
+      <p-galleria [value]="images" [autoPlay]="true" [circular]="true" [responsiveOptions]="responsiveOptions" [numVisible]="5"  [containerStyle]="{ 'max-width': '640px' }"> 
+        <ng-template pTemplate="item" let-item>
+            <img [src]="item.itemImageSrc" style="width: 100%;" />
         </ng-template>
-      </p-galleria>
+        <ng-template pTemplate="thumbnail" let-item>
+            <div class="grid grid-nogutter justify-content-center">
+                <img [src]="item.thumbnailImageSrc" />
+            </div>
+        </ng-template>
+    </p-galleria>
     </div>
  
   </div>
