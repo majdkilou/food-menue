@@ -15,15 +15,22 @@
   <mat-sidenav-container class="example-sidenav-content">
     <mat-sidenav #sidenav mode="push" [opened]="opened">
       <mat-nav-list>
-        <mat-divider class="devider"></mat-divider>
-        <a mat-list-item href="/mine-kpi">Mina KPIer</a>
-        <a mat-list-item href="/rapporter">Rapporter</a>
-        <a mat-list-item href="/support">Support</a>
+        <a mat-list-item href="/">Home</a>
+        <a mat-list-item href="/menu">Menu</a>
+        <a mat-list-item href="/favorites">My favorite</a>
+        <a mat-list-item href="/meal-generator">Random Meals</a>
        
       </mat-nav-list>
+      <mat-nav-list>
+        <mat-divider class="devider"></mat-divider>
+        <a mat-list-item href="/about">About Me</a>
+       
+      </mat-nav-list>
+ 
     </mat-sidenav>
     <mat-sidenav-content>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
+    
   </mat-sidenav-container>
   
