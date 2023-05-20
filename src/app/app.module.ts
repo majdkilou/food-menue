@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 // Angular Material imports for toolbar and sidenav components
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -30,11 +32,15 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import {MatRippleModule} from '@angular/material/core';
+
 
 // Prome Material imports 
 import { GalleriaModule } from 'primeng/galleria';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
+import { SplitterModule } from 'primeng/splitter';
+import { RippleModule } from 'primeng/ripple';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -45,6 +51,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { MealGeneratorComponent } from './meal-generator/meal-generator.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PhotoService } from './service/photo.service';
+import { MealApiService } from './service/meal-api.service';
 
 @NgModule({
   declarations: [
@@ -87,9 +94,13 @@ import { PhotoService } from './service/photo.service';
   BrowserAnimationsModule,
   GalleriaModule,
   ButtonModule,
-  ToastModule
+  ToastModule,
+  HttpClientModule,
+  SplitterModule,
+  RippleModule,
+  MatRippleModule
   ],
-  providers: [PhotoService],
-  bootstrap: [AppComponent]
+  providers: [PhotoService , MealApiService],
+  bootstrap: [AppComponent , HomeComponent]
 })
 export class AppModule { }

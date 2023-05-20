@@ -1,14 +1,41 @@
+<div class="container">
+
+  <div class="example-ripple-container mat-elevation-z4"
+     matRipple
+     [matRippleCentered]="true"
+     [matRippleDisabled]="disabled"
+     [matRippleUnbounded]="unbounded"
+     (click)="navigateTo('menu')"
+    >
+  Menu
+</div>
+<div class="example-ripple-container mat-elevation-z4"
+     matRipple
+     [matRippleCentered]="true"
+     [matRippleDisabled]="disabled"
+     [matRippleUnbounded]="unbounded"
+     (click)="navigateTo('favorites')"
+    >
+  Favorite
+</div>
+<div class="example-ripple-container mat-elevation-z4"
+     matRipple
+     [matRippleCentered]="true"
+     [matRippleDisabled]="disabled"
+     [matRippleUnbounded]="unbounded"
+     (click)="navigateTo('random-meal')"
+    >
+  Random Meal
+</div>
+</div>
+
 <div class="home-container">
     <div class="card" *ngIf="images" >
-      <p-galleria [value]="images" [autoPlay]="true" [circular]="true" [responsiveOptions]="responsiveOptions" [numVisible]="5"  [containerStyle]="{ 'max-width': '640px' }"> 
+      <p-galleria [value]="images" [autoPlay]="true" [showItemNavigators]="true" [showThumbnails]="false" [showIndicators]="true" [showIndicatorsOnItem]="true" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '640px', 'margin-top':'2em' }"> 
         <ng-template pTemplate="item" let-item>
             <img [src]="item.itemImageSrc" style="width: 100%;" />
         </ng-template>
-        <ng-template pTemplate="thumbnail" let-item>
-            <div class="grid grid-nogutter justify-content-center">
-                <img [src]="item.thumbnailImageSrc" />
-            </div>
-        </ng-template>
+      
     </p-galleria>
     </div>
  

@@ -1,10 +1,61 @@
-.home-containe {
-width: 100%;
-}
+.home-container {
 
-.card {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-}
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+
+  }
+  
+  .card {
+    max-width: 640px;
+    margin-top: 2em;
+    width: 500px;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px ;
+    
+
+    
+
+  }
+  .example-ripple-container {
+    cursor: pointer;
+    text-align: center;
+  
+    width: 200px;
+    height: 150px;
+    line-height: 150px;
+  
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+  
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /** Styles to make the demo look better. */
+  .example-ripple-checkbox {
+    margin: 6px 12px 6px 0;
+  }
+  
+  .example-ripple-form-field {
+    margin: 0 12px 0 0;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .card {
+      max-width: 90%;
+    }
+  }
+  

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotoService } from '../service/photo.service';
+import { MealApiService } from '../service/meal-api.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -8,6 +11,13 @@ import { PhotoService } from '../service/photo.service';
 })
 export class HomeComponent implements OnInit {
   images: any[] = []; // Initialize images as an empty array
+  meals: any[] = []; // Initialize meals as an empty array
+  centered = false;
+  disabled = false;
+  unbounded = false;
+
+  radius?: number;
+  color?: 'red';
 
   public responsiveOptions: any[] = [
     {
@@ -24,12 +34,34 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  constructor(private photoService: PhotoService) { }
+  constructor(private photoService: PhotoService, private mealApiService: MealApiService , private router: Router ) { }
 
+  navigateTo(page: string): void {
+    switch (page) {
+      case 'menu':
+        this.router.navigate(['menu']);
+        break;
+      case 'favorites':
+        this.router.navigate(['favorites']);
+        break;
+      case 'random-meal':
+        this.router.navigate(['meal-generator']);
+        break;
+      default:
+        // Handle other cases or show an error message
+        break;
+    }
+  }
   ngOnInit(): void {
     this.photoService.getImages().then((images) => {
       console.log(images);
       this.images = images;
+    });
+
+    this.mealApiService.lookupRandomMeal().subscribe((response) => {
+      console.log(response);
+      this.meals = response.meals;
+      console.log(this.meals);
     });
   }
 }
