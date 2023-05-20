@@ -101,6 +101,6 @@ import { MealApiService } from './service/meal-api.service';
   MatRippleModule
   ],
   providers: [PhotoService , MealApiService],
-  bootstrap: [AppComponent , HomeComponent]
+  bootstrap: [AppComponent ]
 })
 export class AppModule { }
