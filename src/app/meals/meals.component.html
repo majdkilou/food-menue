@@ -1,1 +1,30 @@
-<p>meals works!</p>
+<div class="card">
+    <p-dataView [value]="meals" [rows]="5" [paginator]="true">
+      <ng-template let-meal pTemplate="listItem">
+        <div class="col-12">
+          <div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
+            <img class="meal-image" [src]="meal.strMealThumb" [alt]="meal.strMeal" />
+            <div class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
+              <div class="flex flex-column align-items-center sm:align-items-start gap-3">
+                <div class="text-2xl font-bold text-900">{{ meal.strMeal }}</div>
+                <div class="card flex justify-content-center">
+                    <p-rating [(ngModel)]="value"></p-rating>
+                </div>
+                                <div class="flex align-items-center gap-3">
+                  <span class="flex align-items-center gap-2">
+                  
+                    <span class="font-semibold">{{ meal.strCategory }}</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
+                <button pButton icon="pi pi-heart" class="md:align-self-end mb-2 p-button-rounded" [disabled]="meal.inventoryStatus === 'OUTOFSTOCK'" (click)="addToFavorites(meal)"></button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-dataView>
+  </div>
+  

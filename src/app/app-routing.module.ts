@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'meals/:category', component: MealsComponent },
   { path: 'favorites', component: FavoritesComponent },
   { path: 'meal-generator', component: MealGeneratorComponent },
-  { path: '**', redirectTo: '' } // Redirect to home if route not found
+  { path: '**', redirectTo: '' } // Redirect to home if route not found,
+  
 ];
 
 @NgModule({

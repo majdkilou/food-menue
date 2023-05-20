@@ -5,6 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'; // Import the FormsModule
+
 
 
 // Angular Material imports for toolbar and sidenav components
@@ -41,6 +43,14 @@ import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { SplitterModule } from 'primeng/splitter';
 import { RippleModule } from 'primeng/ripple';
+import { CardModule } from 'primeng/card';
+import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
+import { RatingModule } from 'primeng/rating'; // Import the RatingModule from PrimeNG
+import { TagModule } from 'primeng/tag';
+import { PrimeIcons } from 'primeng/api';
+
+
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -98,9 +108,14 @@ import { MealApiService } from './service/meal-api.service';
   HttpClientModule,
   SplitterModule,
   RippleModule,
-  MatRippleModule
+  MatRippleModule,
+  CardModule,
+  DataViewModule,
+  RatingModule,
+  FormsModule,
+  TagModule
   ],
-  providers: [PhotoService , MealApiService],
+  providers: [PhotoService , MealApiService, PrimeIcons],
   bootstrap: [AppComponent ]
 })
 export class AppModule { }

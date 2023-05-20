@@ -84,7 +84,7 @@ export class MealApiService {
 
   // Method to filter by Category
   filterByCategory(category: string): Observable<any> {
-    const url = this.addApiKey(`${this.baseUrl}/filter.php?c=${category}`);
+    const url = `${this.baseUrl}/filter.php?c=${category}`;
     return this.http.get(url);
   }
 

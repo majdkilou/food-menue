@@ -1,1 +1,19 @@
-<p>menu works!</p>
+<div class="card-container" *ngIf="!selectedCategory">
+    <ng-container *ngFor="let category of categories">
+      <p-card [header]="category.strCategory" [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+          <img alt="Card" [src]="category.strCategoryThumb" />
+        </ng-template>
+        <p class="card-description">
+            {{ category.strCategoryDescription }}
+        </p>
+        <ng-template pTemplate="footer">
+          <p-button label="Select" icon="pi pi-check" (click)="onCategorySelected(category.strCategory)"></p-button>
+        </ng-template>
+      </p-card>
+    </ng-container>
+  </div>
+<div class="meals" *ngIf="selectedCategory">
+  <app-meals [selectedCategory]="selectedCategory" ></app-meals>
+</div>
+  

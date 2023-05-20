@@ -1,0 +1,14 @@
+.card {
+    overflow: hidden;
+    
+  }
+
+  .meal-image {
+    width: 10rem; /* Adjust the width as per your preference */
+    height: auto; /* Automatically adjust the height based on the image aspect ratio */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a box shadow effect */
+    display: block; /* Ensure the image is displayed as a block element */
+    margin: 0 auto; /* Center the image horizontally */
+    border-radius: 8px; /* Add rounded corners */
+  }
+  

@@ -30,7 +30,7 @@
   .example-ripple-container {
     cursor: pointer;
     text-align: center;
-  
+  color: #6600FF  ;
     width: 200px;
     height: 150px;
     line-height: 150px;
@@ -41,6 +41,11 @@
   
     -webkit-user-drag: none;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  .example-ripple-container:hover {
+    transform: scale(1.0);
+    background-color: #f2f2f2;
   }
   
   /** Styles to make the demo look better. */
