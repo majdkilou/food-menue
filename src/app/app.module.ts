@@ -31,7 +31,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
-
+// Prome Material imports 
+import { GalleriaModule } from 'primeng/galleria';
+import { ButtonModule } from 'primeng/button';
+import { ToastModule } from 'primeng/toast';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -41,6 +44,7 @@ import { MealsComponent } from './meals/meals.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { MealGeneratorComponent } from './meal-generator/meal-generator.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { PhotoService } from './service/photo.service';
 
 @NgModule({
   declarations: [
@@ -80,9 +84,12 @@ import { NavbarComponent } from './navbar/navbar.component';
   MatMenuModule,
   MatTooltipModule,
   MatProgressBarModule,
-  BrowserAnimationsModule
+  BrowserAnimationsModule,
+  GalleriaModule,
+  ButtonModule,
+  ToastModule
   ],
-  providers: [],
+  providers: [PhotoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
