@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,15 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
   public sidebarVisible: boolean;
   public opened = false;
-  constructor() {
+  constructor(private router: Router) {
     this.sidebarVisible = true; // Assign a value here
   }
+
+
+handleClick() {
+ 
+
+  // Navigate to the "favorites" path
+  this.router.navigate(['/favorites']);
+}
 }
