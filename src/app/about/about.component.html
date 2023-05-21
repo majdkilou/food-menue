@@ -1,1 +1,11 @@
-<p>about works!</p>
+<div class="container">
+    <h1>About</h1>
+<p>{{ appDescription }}</p>
+
+<h2>Tech Stack</h2>
+<ul>
+  <li *ngFor="let tech of techStack">{{ tech }}</li>
+</ul>
+
+<p>{{ designer }}</p>
+</div>

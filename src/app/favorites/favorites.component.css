@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .example-card {
+    width: 300px;
+    margin: 10px;
+  }
+  
